@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My calculator</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      #calculator {
+        width: 260px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #display {
+        width: calc(100% - 20px);
+        margin-bottom: 15px;
+        padding: 15px;
+        font-size: 1.5em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      #secondary {
+        width: 120px;
+        height: 20px;
+        font-size: 0.7em;
+        border: none;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2em;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: #3498db;
+        color: #fff;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #217dbb;
+      }
+    </style>
+    <script src="./code.js"></script>
+  </head>
+  <body>
+    <div id="calculator">
+      <input type="text" id="secondary" readonly />
+      <input type="text" id="display" readonly />
+      <br />
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="toggleSign()">+/-</button>
+      <button onclick="backspace()">&#9003;</button>
+      <button onclick="nextOperation('/')">/</button>
+      <br />
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="nextOperation('*')">*</button>
+      <br />
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="nextOperation('-')">-</button>
+      <br />
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="nextOperation('+')">+</button>
+      <br />
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button onclick="calculateResult()">=</button>
+    </div>
+  </body>
+</html>
